@@ -11,6 +11,8 @@ $form=$Form->find($_GET['id']);
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
     <style>
         table,
         th,
@@ -35,7 +37,6 @@ $form=$Form->find($_GET['id']);
                 <td>性別:</td>
                 <td>
                     <select name="gender">
-                        <!-- <option value="<?=$form['gender'];?>" selected><?=$form['gender'];?></option> -->
                         <option value="男">男</option>
                         <option value="女">女</option>
                     </select>
