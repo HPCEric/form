@@ -102,7 +102,7 @@
                     },
                     email: {
                         required: true,
-                        email: true,
+                        email: true
                     },
                 },
                 messages: {
@@ -121,7 +121,7 @@
                         required: '必填'
                     },
                     email: {
-                        required: '必填'
+                        required: '必填',
                     },
                 },
                 submitHandler: function(form) {
