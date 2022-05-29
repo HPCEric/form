@@ -35,36 +35,38 @@ include_once "../base.php";
         <?php
         $rows = $Form->all();
         foreach ($rows as $row) {
+            if ($row['is_deleted'] == 0) {
         ?>
 
-            <tr>
-                <td>
-                    <?= $row['id']; ?>
-                </td>
-                <td>
-                    <?= $row['name']; ?>
-                </td>
-                <td>
-                    <?= $row['gender']; ?>
-                </td>
-                <td>
-                    <?= $row['tel']; ?>
-                </td>
-                <td>
-                    <?= $row['addr']; ?>
-                </td>
-                <td>
-                    <?= $row['email']; ?>
-                </td>
-                <td>
-                    <button onclick="location.href='edit.php?id=<?= $row['id']; ?>'">修改</button>
-                </td>
-                <td>
-                    <button onclick="del(<?= $row['id']; ?>)">刪除</button>
-                </td>
-            </tr>
+                <tr>
+                    <td>
+                        <?= $row['id']; ?>
+                    </td>
+                    <td>
+                        <?= $row['name']; ?>
+                    </td>
+                    <td>
+                        <?= $row['gender'] == 0 ? "男" : "女"; ?>
+                    </td>
+                    <td>
+                        <?= $row['tel']; ?>
+                    </td>
+                    <td>
+                        <?= $row['addr']; ?>
+                    </td>
+                    <td>
+                        <?= $row['email']; ?>
+                    </td>
+                    <td>
+                        <button onclick="location.href='edit.php?id=<?= $row['id']; ?>'">修改</button>
+                    </td>
+                    <td>
+                        <button onclick="del(<?= $row['id']; ?>)">刪除</button>
+                    </td>
+                </tr>
 
         <?php
+            }
         }
         ?>
         <tr>
@@ -75,10 +77,13 @@ include_once "../base.php";
     </table>
 
     <script>
-        function del(id){
-            let msg="確定要刪除資料?";
-            if(confirm(msg)==true){
-                $.post("../api/del.php",{id},()=>{
+        function del(id) {
+            let msg = "確定要刪除資料?";
+            if (confirm(msg) == true) {
+                $.post("../api/del.php", {
+                    id
+                }, () => {
+                    // console.log(id);
                     location.reload();
                 })
             }

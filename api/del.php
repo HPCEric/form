@@ -1,5 +1,5 @@
 <?php
 include_once "../base.php";
 
-$Form->del($_POST['id']);
+$Form->q("UPDATE form SET `is_deleted`='1' WHERE `id`={$_POST['id']}");
 ?>
