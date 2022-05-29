@@ -61,7 +61,7 @@
                 <td>
                     <input type="submit" value="提交">
                     <input type="reset" value="重置">
-                    <input type="button" onclick="location.href='form.php'" value="取消">
+                    <input type="button" onclick="location.href='../index.php'" value="取消">
                 </td>
                 <td></td>
             </tr>
@@ -141,7 +141,7 @@
                             email: email,
                         },
                         success: function(data) {
-                            window.location.href = "form.php";
+                            window.location.href = "../index.php";
                         }
                     });
                 },

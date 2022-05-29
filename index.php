@@ -1,5 +1,5 @@
 <?php
-include_once "../base.php";
+include_once "base.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +58,7 @@ include_once "../base.php";
                         <?= $row['email']; ?>
                     </td>
                     <td>
-                        <button onclick="location.href='edit.php?id=<?= $row['id']; ?>'">修改</button>
+                        <button onclick="location.href='front/edit.php?id=<?= $row['id']; ?>'">修改</button>
                     </td>
                     <td>
                         <button onclick="del(<?= $row['id']; ?>)">刪除</button>
@@ -71,7 +71,7 @@ include_once "../base.php";
         ?>
         <tr>
             <td colspan="8" style="text-align:right">
-                <button onclick="location.href='add.php'">新增</button>
+                <button onclick="location.href='front/add.php'">新增</button>
             </td>
         </tr>
     </table>
